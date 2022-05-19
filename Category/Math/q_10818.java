@@ -9,15 +9,18 @@ public class q_10818 {
 
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
-        int[] arr = new int[N];
+        int a = sc.nextInt();
+        int[] arr = new int[a];
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < a; i++) {
             arr[i] = sc.nextInt();
         }
 
         sc.close();
+
         Arrays.sort(arr);
-        System.out.print(arr[0] + " " + arr[N - 1]);
+
+        System.out.print(arr[0] + " " + arr[a - 1]);
+
     }
 }
