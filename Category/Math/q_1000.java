@@ -1,5 +1,4 @@
-package Category;
-
+package Category.Math;
 import java.util.*;
 public class q_1000{
     public static void main(String args[]){
