@@ -1,94 +1,89 @@
 package Category;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class q_2108 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
 
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int T = sc.nextInt();
-        int[] count = new int[8001];
-        Arrays.fill(count,0);
-        int[] arr = new int[T];
 
-        int C = 0;
+        int[] arr1 = new int[T];
+        int[] arr2 = new int[T];
+        Arrays.fill(arr2, 4001);
 
         double sum = 0;
 
-
-        StringBuilder sb = new StringBuilder();
-
-
         for (int i = 0; i < T; i++){
 
-            arr[i] = sc.nextInt();
-
-            sum += arr[i];
-
+            arr1[i] = sc.nextInt();
+            sum += arr1[i];
         }
+
+        Arrays.sort(arr1);
 
         sb.append(Math.round(sum/T)).append("\n");
 
-        Arrays.sort(arr);
+        sb.append(arr1[(T-1)/2]).append("\n");
 
-        int max = arr[T-1];
-        int min = arr[0];
+        int max = arr1[T-1];
+        int min = arr1[0];
+        int[] count = new int[max - min + 1];
+        Arrays.fill(count,0);
 
-        sb.append(arr[T/2]).append("\n");
-
-        for (int i = 0; i < T; i++){
-
-            count[arr[i] + 4000]++;
-        }
-
-        Arrays.fill(arr, Integer.MAX_VALUE);
-
-        for (int i = 0; i < 7998; i++){
-
-            int K = 0;
-
-            if(count[i] != 0){
-
-                arr[K] = i - 4000;
-                K++;
-            }
-
-            if (count[i] < count[i+1]){
-
-                Arrays.fill(arr, Integer.MAX_VALUE);
-                arr[C] = i+1 - 4000;
-                K = 0;
-
-            } else if (count[i] == count[i+1] && count[i] != 0){
-
-                arr[K] = i+1 - 4000;
-                K++;
-            }
-        }
-
-        Arrays.sort(arr);
-
-        if (arr[1] == Integer.MAX_VALUE){
-            sb.append(arr[0]).append("\n");
+        if (T == 1){
+            sb.append(arr1[0]).append("\n");
         }
 
         else {
+            for (int i = 0; i < T; i++) {
 
-            sb.append(arr[1]).append("\n");
+                count[arr1[i] - min]++;
+
+            }
+
+            int W = 1;
+            int K;
+            int z = 0;
+            for (int i = 0; i <= max - min; i++) {
+
+                if (count[i] > W) {
+                    z = 0;
+                    W = count[i];
+                    K = i + min;
+                    arr2[z] = K;
+                    z++;
+                } else if (count[i] == W && W != 1) {
+                    K = i + min;
+                    arr2[z] = K;
+                    z++;
+                }
+            }
+
+            if (arr2[1] == 4001 && arr2[0] != 4001) {
+
+                sb.append(arr2[0]).append("\n");
+
+            } else if (W == 1) {
+
+                sb.append(arr1[1]).append("\n");
+
+            } else {
+
+                sb.append(arr2[1]).append("\n");
+
+            }
         }
 
-        sb.append(max - min);
+        sb.append(arr1[T-1] - arr1[0]);
 
-        bw.write(String.valueOf(sb));
-        bw.flush();
-        bw.close();
+
+        System.out.println(sb);
     }
 }
