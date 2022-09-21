@@ -20,7 +20,7 @@ public class q_17618 {
 
                 int p = S.charAt(j) - '0';
                 sum += p;
-                num += p * (int) Math.pow(10, str.length() - (j + 1));
+                num += p * (int) Math.pow(10, S.length() - (j + 1));
             }
 
             if (num % sum == 0) {
@@ -28,7 +28,5 @@ public class q_17618 {
             }
         }
         System.out.println(count);
-
-
     }
 }
