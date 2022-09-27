@@ -11,25 +11,27 @@ public class q_13410 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
 
-        int A = Integer.parseInt(st.nextToken());
-        int B = Integer.parseInt(st.nextToken());
-        int[] arr = new int[B];
+        int[] arr = new int[K];
 
-        for (int i = 1; i <= B; i++){
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = N * (i + 1);
+        }
 
-            arr[i-1] = A * i;
-
-            if (arr[i-1] >= 10) {
-
-                arr[i-1] = (arr[i-1] % 10) * 10 + arr[i-1] / 10;
+        for (int i = 0; i < arr.length; i++) {
+            String str = String.valueOf(arr[i]);
+            String reverse = "";
+            for (int j = 0; j < str.length(); j++) {
+                reverse += str.charAt(str.length() - (1 + j));
             }
+            arr[i] = Integer.parseInt(reverse);
         }
         Arrays.sort(arr);
 
-        System.out.println(arr[B-1]);
-
+        System.out.println(arr[K - 1]);
     }
 }
