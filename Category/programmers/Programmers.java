@@ -1,5 +1,7 @@
 package Category.programmers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -9,28 +11,19 @@ public class Programmers {
         Scanner sc = new Scanner(System.in);
 
         int a = sc.nextInt();
-        int b = sc.nextInt();
 
-        System.out.println(solution.solution(a, b));
+        System.out.println(Solution.solution(a));
 
     }
-    class solution{
-        public static String solution(int a, int b) {
-            int[] monthDays = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-            String[] day = {"THU", "FRI", "SAT ","SUN ", "MON","TUE","WED"};
-
+    class Solution {
+        public static String solution(int num) {
             String answer = "";
-            int sum = 0;
-
-            for(int i = 0; i< a-1; i++){
-                sum += monthDays[i];
+            if (num % 2 == 0) {
+                answer += "Even";
+            } else {
+                answer += "Odd";
             }
-            sum += b;
-
-            answer = day[sum % 7];
             return answer;
         }
     }
-
-
 }
