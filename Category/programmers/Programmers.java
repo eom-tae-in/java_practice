@@ -1,29 +1,30 @@
 package Category.programmers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Programmers {
 
-    public static void main(String[] args) {
+    static class Solution {
+        public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
-        int a = sc.nextInt();
+            int T = sc.nextInt();
+            int[] arr = new int[T];
 
-        System.out.println(Solution.solution(a));
-
-    }
-    class Solution {
-        public static String solution(int num) {
-            String answer = "";
-            if (num % 2 == 0) {
-                answer += "Even";
-            } else {
-                answer += "Odd";
+            for (int i = 0; i < T; i++) {
+                arr[i] = sc.nextInt();
             }
-            return answer;
+            System.out.println(solution(arr));
+        }
+
+        public static double solution(int[] arr) {
+            double answer = 0;
+            for (int i = 0; i < arr.length; i++) {
+                answer += arr[i];
+            }
+            return answer / arr.length;
         }
     }
 }
