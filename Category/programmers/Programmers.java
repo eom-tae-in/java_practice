@@ -1,5 +1,6 @@
 package Category.programmers;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -7,18 +8,20 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int T = sc.nextInt();
-            System.out.println(solution(T));
+            long T = sc.nextLong();
+            int[] arr = solution(T);
+            System.out.println(Arrays.toString(arr));
 
         }
-            public static int solution(int n) {
-                int answer = 0;
-                String str = Integer.toString(n);
-                for (int i = 0; i < str.length(); i++) {
-                    answer += str.charAt(i) - '0';
-                }
-                System.out.println("Hello Java");
-                return answer;
+        public static int[] solution(long n) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(n);
+            String str = String.valueOf(sb.reverse());
+            int[] answer = new int[str.length()];
+            for (int i = 0; i < str.length(); i++) {
+                answer[i] = str.charAt(i) - '0';
+            }
+            return answer;
         }
     }
 }
