@@ -8,17 +8,23 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            long T = sc.nextLong();
-            int[] arr = solution(T);
-            System.out.println(Arrays.toString(arr));
-
+            String str = sc.next();
+            System.out.println(solution(str));
         }
-        public long solution(long n) {
-            long answer = 0;
-            if (n % Math.sqrt(n) == 0) {
-                answer = (long) Math.pow((Math.sqrt(n) + 1), 2);
-            } else {
-                answer = -1;
+
+        static boolean solution(String s) {
+            boolean answer = true;
+            int count = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == 'p' || s.charAt(i) == 'P') {
+                    count++;
+                }
+                if (s.charAt(i) == 'y' || s.charAt(i) == 'Y') {
+                    count--;
+                }
+            }
+            if (count != 0) {
+                answer = false;
             }
             return answer;
         }
