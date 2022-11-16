@@ -13,13 +13,12 @@ public class Programmers {
             System.out.println(Arrays.toString(arr));
 
         }
-        public static int[] solution(long n) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(n);
-            String str = String.valueOf(sb.reverse());
-            int[] answer = new int[str.length()];
-            for (int i = 0; i < str.length(); i++) {
-                answer[i] = str.charAt(i) - '0';
+        public long solution(long n) {
+            long answer = 0;
+            if (n % Math.sqrt(n) == 0) {
+                answer = (long) Math.pow((Math.sqrt(n) + 1), 2);
+            } else {
+                answer = -1;
             }
             return answer;
         }
