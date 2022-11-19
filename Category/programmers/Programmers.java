@@ -18,8 +18,8 @@ public class Programmers {
             String str = Long.toString(n);
             String[] strings = str.split("");
             Arrays.sort(strings, Collections.reverseOrder());
-            String sortrdStr = String.join("", strings);
-            answer = Long.parseLong(sortrdStr);
+            String sortedStr = String.join("", strings);
+            answer = Long.parseLong(sortedStr);
             return answer;
         }
     }
