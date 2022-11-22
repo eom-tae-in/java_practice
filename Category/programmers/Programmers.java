@@ -1,9 +1,5 @@
 package Category.programmers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Programmers {
@@ -12,18 +8,15 @@ public class Programmers {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             int n = sc.nextInt();
-            System.out.println(solution(n));
+            int m = sc.nextInt();
+            System.out.println(solution(n, m));
         }
-
-        public static int solution(int n) {
-            int answer = 0;
-            for (int i = 2; i < n; i++) {
-                if (n % i == 1) {
-                    answer = i;
-                    break;
+            public static long solution(int a, int b) {
+                long answer = 0;
+                for (int i = Math.min(a, b); i <= Math.max(a, b); i++) {
+                    answer += i;
                 }
+                return answer;
             }
-            return answer;
-        }
     }
 }
