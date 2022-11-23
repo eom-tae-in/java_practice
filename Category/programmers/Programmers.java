@@ -8,28 +8,19 @@ public class Programmers {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             int n = sc.nextInt();
-            System.out.println(solution(n));
+            String[] strings = new String[n];
+            for (int i = 0; i < n; i++) {
+                strings[i] = sc.next();
+            }
+            System.out.println(solution(strings));
         }
-        public static int solution(int num) {
-            int answer = 0;
-            int count = 0;
-            long number = num;
-            for (int i = 0; i < 500; i++) {
-                if (number != 1) {
-                    count++;
-                    if (number % 2 == 0) {
-                        number /= 2;
-                    } else {
-                        number = 3 * number + 1;
-                    }
-                } else {
+        public static String solution(String[] seoul) {
+            String answer = "";
+            for (int i = 0; i < seoul.length; i++) {
+                if (seoul[i].equals("Kim")) {
+                    answer += "김서방은 " + i + "에 있다";
                     break;
                 }
-            }
-            if (count == 500 && number != 1) {
-                answer = -1;
-            } else {
-                answer = count;
             }
             return answer;
         }
