@@ -1,5 +1,7 @@
 package Category.programmers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -10,13 +12,28 @@ public class Programmers {
             String strings = sc.next();
             System.out.println(solution(strings));
         }
-        public static String solution(String phone_number) {
-            String answer = "";
-            for (int i = 0; i < phone_number.length() - 4; i++) {
-
-                answer += "*";
+        public int[] solution(int[] arr, int divisor) {
+            int[] answer;
+            int index = 0;
+            ArrayList<Integer> list = new ArrayList<>();
+            for (int j : arr) {
+                if (j % divisor == 0) {
+                    list.add(j);
+                }
             }
-            answer += phone_number.substring(phone_number.length() - 4);
+            if (list.size() == 0) {
+                answer = new int[]{-1};
+            } else {
+
+                answer = new int[list.size()];
+
+                for (int i = 0; i < answer.length; i++) {
+                    answer[i] = list.get(i);
+                }
+
+                Arrays.sort(answer);
+            }
+
             return answer;
         }
     }
