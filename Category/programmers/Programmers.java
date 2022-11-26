@@ -12,8 +12,28 @@ public class Programmers {
         }
     }
 
-    public static int solution(int num1, int num2) {
-        int answer = num1 - num2;
+    public static int solution(int left, int right) {
+        int answer = 0;
+        for (int i = left; i <= right; i++) {
+            if (divisor(i) % 2 == 0) {
+                answer += i;
+            } else {
+                answer -= i;
+            }
+        }
         return answer;
+    }
+
+    public static int divisor(int num) {
+        int count = 0;
+        for (int i = 1; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                count++;
+                if (num != i * i) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 }
