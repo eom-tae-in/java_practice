@@ -12,11 +12,10 @@ public class Programmers {
         }
     }
 
-    public static int solution(int num1, int num2) {
+    public static int solution(int n, int k) {
         int answer = 0;
-        double num = (double) num1 / (double) num2;
-        num *= 1000;
-        answer = (int) num;
+        int num = n / 10;
+        answer = n * 12000 + (k - num) * 2000;
         return answer;
     }
 }
