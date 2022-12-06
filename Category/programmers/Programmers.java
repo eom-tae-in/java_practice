@@ -6,16 +6,21 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int num1 = sc.nextInt();
-            int num2 = sc.nextInt();
-            System.out.println(solution(num1, num2));
+            int num = sc.nextInt();
+            int[] numbers = new int[num];
+            for (int i = 0; i < numbers.length; i++) {
+                numbers[i] = sc.nextInt();
+            }
+            System.out.println(solution(numbers));
         }
     }
 
-    public static int solution(int n, int k) {
-        int answer = 0;
-        int num = n / 10;
-        answer = n * 12000 + (k - num) * 2000;
+    public static double solution(int[] numbers) {
+        double answer = 0;
+        for (int number : numbers) {
+            answer += number;
+        }
+        answer /= numbers.length;
         return answer;
     }
 }
