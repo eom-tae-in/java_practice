@@ -7,20 +7,17 @@ public class Programmers {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             int num = sc.nextInt();
-            int[] numbers = new int[num];
-            for (int i = 0; i < numbers.length; i++) {
-                numbers[i] = sc.nextInt();
-            }
-            System.out.println(solution(numbers));
+            System.out.println(solution(num));
         }
     }
 
-    public static double solution(int[] numbers) {
-        double answer = 0;
-        for (int number : numbers) {
-            answer += number;
+    public static int solution(int n) {
+        int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                answer += i;
+            }
         }
-        answer /= numbers.length;
         return answer;
     }
 }
