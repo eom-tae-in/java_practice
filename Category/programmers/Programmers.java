@@ -1,4 +1,5 @@
 package Category.programmers;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -16,13 +17,20 @@ public class Programmers {
         }
     }
 
-    public static int solution(int[] array, int n) {
+    public static int solution(int[] array, int height) {
         int answer = 0;
-        for (int j : array) {
-            if (j == n) {
-                answer++;
+        int num = 0;
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > height) {
+                num = i;
+                break;
+            }
+            if (i == array.length - 1) {
+                num = array.length;
             }
         }
+        answer = array.length - num;
         return answer;
     }
 }
