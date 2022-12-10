@@ -7,30 +7,18 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] array = new int[index];
-            for (int i = 0; i < array.length; i++) {
-                array[i] = sc.nextInt();
-            }
-            int number = sc.nextInt();
-            System.out.println(solution(array, number));
+            int num = sc.nextInt();
+            System.out.println(solution(num));
         }
     }
 
-    public static int solution(int[] array, int height) {
+    public static int solution(int n) {
         int answer = 0;
-        int num = 0;
-        Arrays.sort(array);
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > height) {
-                num = i;
-                break;
-            }
-            if (i == array.length - 1) {
-                num = array.length;
-            }
+        if (n % 7 == 0) {
+            answer = n / 7;
+        } else {
+            answer = n / 7 + 1;
         }
-        answer = array.length - num;
         return answer;
     }
 }
