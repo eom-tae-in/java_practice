@@ -18,10 +18,10 @@ public class Programmers {
         }
     }
 
-    public static int[] solution(int[] num_list) {
-        int[] answer = new int[num_list.length];
-        for (int i = 0; i < num_list.length; i++) {
-            answer[i] = num_list[num_list.length - (i + 1)];
+    public static int[] solution(int[] numbers) {
+        int[] answer = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            answer[i] = numbers[i] * 2;
         }
         return answer;
     }
