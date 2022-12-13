@@ -9,20 +9,17 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] arrayNumber = new int[index];
-            for (int i = 0; i < arrayNumber.length; i++) {
-                arrayNumber[i] = sc.nextInt();
-            }
-            System.out.println(Arrays.toString(solution(arrayNumber)));
+            String str = sc.next();
+            System.out.println(solution(str));
         }
     }
 
-    public static int[] solution(int[] numbers) {
-        int[] answer = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            answer[i] = numbers[i] * 2;
-        }
+    public static String solution(String my_string) {
+        String answer = "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(my_string);
+        sb.reverse();
+        answer = String.valueOf(sb);
         return answer;
     }
 }
