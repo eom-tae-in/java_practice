@@ -14,19 +14,23 @@ public class Programmers {
             for (int i = 0; i < numbers.length; i++) {
                 numbers[i] = sc.nextInt();
             }
-            int num1 = sc.nextInt();
-            int num2 = sc.nextInt();
-            System.out.println(Arrays.toString(solution(numbers, num1, num2)));
+            System.out.println(Arrays.toString(solution(numbers)));
         }
     }
 
-    public static int[] solution(int[] numbers, int num1, int num2) {
-        int[] answer = new int[num2 - num1 + 1];
-        int index = 0;
-        for (int i = num1; i <= num2; i++) {
-            answer[index] = numbers[i];
-            index++;
+    public static int[] solution(int[] num_list) {
+        int[] answer = new int[2];
+        int odd = 0;
+        int even = 0;
+        for (int j : num_list) {
+            if (j % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
         }
+        answer[0] = even;
+        answer[1] = odd;
         return answer;
     }
 }
