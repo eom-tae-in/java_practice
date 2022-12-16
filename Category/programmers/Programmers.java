@@ -9,28 +9,19 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] numbers = new int[index];
-            for (int i = 0; i < numbers.length; i++) {
-                numbers[i] = sc.nextInt();
-            }
-            System.out.println(Arrays.toString(solution(numbers)));
+            String str1 = sc.next();
+            String str2 = sc.next();
+            System.out.println(solution(str1, str2));
         }
     }
 
-    public static int[] solution(int[] num_list) {
-        int[] answer = new int[2];
-        int odd = 0;
-        int even = 0;
-        for (int j : num_list) {
-            if (j % 2 == 0) {
-                even++;
-            } else {
-                odd++;
+    public static String solution(String my_string, String letter) {
+        String answer = "";
+        for (int i = 0; i < my_string.length(); i++) {
+            if (my_string.charAt(i) != letter.charAt(0)) {
+                answer += my_string.charAt(i);
             }
         }
-        answer[0] = even;
-        answer[1] = odd;
         return answer;
     }
 }
