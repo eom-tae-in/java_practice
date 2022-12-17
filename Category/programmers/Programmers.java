@@ -9,19 +9,17 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String str1 = sc.next();
-            String str2 = sc.next();
-            System.out.println(solution(str1, str2));
+            int money = sc.nextInt();
+            System.out.println(Arrays.toString(solution(money)));
         }
     }
 
-    public static String solution(String my_string, String letter) {
-        String answer = "";
-        for (int i = 0; i < my_string.length(); i++) {
-            if (my_string.charAt(i) != letter.charAt(0)) {
-                answer += my_string.charAt(i);
-            }
-        }
+    public static int[] solution(int money) {
+        int[] answer = new int[2];
+        int num = money / 5500;
+        int R = money % 5500;
+        answer[0] = num;
+        answer[1] = R;
         return answer;
     }
 }
