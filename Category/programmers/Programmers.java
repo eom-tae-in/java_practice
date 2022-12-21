@@ -9,18 +9,24 @@ public class Programmers {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
             int index = sc.nextInt();
-            String[] arr = new String[index];
+            int[] arr = new int[index];
             for (int i = 0; i < arr.length; i++) {
-                arr[i] = sc.next();
+                arr[i] = sc.nextInt();
             }
-            System.out.println(Arrays.toString(solution(arr)));
+            System.out.println(solution(arr));
         }
     }
 
-    public static int[] solution(String[] strlist) {
-        int[] answer = new int[strlist.length];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = strlist[i].length();
+    public static int solution(int[] dot) {
+        int answer = 0;
+        if (dot[0] > 0 && dot[1] > 0) {
+            answer = 1;
+        } else if (dot[0] < 0 && dot[1] > 0) {
+            answer = 2;
+        } else if (dot[0] < 0 && dot[1] < 0) {
+            answer = 3;
+        } else if (dot[0] > 0 && dot[1] < 0) {
+            answer = 4;
         }
         return answer;
     }
