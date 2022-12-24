@@ -1,6 +1,5 @@
 package Category.programmers;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -8,19 +7,22 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] arr = new int[index];
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = sc.nextInt();
-            }
-            System.out.println(solution(arr));
+            int n = sc.nextInt();
+            System.out.println(solution(n));
         }
     }
 
-    public static int solution(int[] array) {
+    public static int solution(int n) {
         int answer = 0;
-        Arrays.sort(array);
-        answer = array[array.length / 2];
+        for (int i = 1; i * i <= n; i++) {
+            if (i * i == n) {
+                answer++;
+                break;
+            }
+            if (n % i == 0) {
+                answer += 2;
+            }
+        }
         return answer;
     }
 }
