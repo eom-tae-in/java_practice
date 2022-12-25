@@ -14,14 +14,9 @@ public class Programmers {
 
     public static int solution(int n) {
         int answer = 0;
-        for (int i = 1; i * i <= n; i++) {
-            if (i * i == n) {
-                answer++;
-                break;
-            }
-            if (n % i == 0) {
-                answer += 2;
-            }
+        String str = Integer.toString(n);
+        for (int i = 0; i < str.length(); i++) {
+            answer += str.charAt(i) - '0';
         }
         return answer;
     }
