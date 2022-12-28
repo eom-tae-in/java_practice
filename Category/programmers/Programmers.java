@@ -2,34 +2,37 @@ package Category.programmers;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Programmers {
 
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int s1Index = sc.nextInt();
-            int s2Index = sc.nextInt();
-            String[] s1 = new String[s1Index];
-            String[] s2 = new String[s2Index];
-            for (int i = 0; i < s1.length; i++) {
-                s1[i] = sc.next();
+            int n = sc.nextInt();
+            int index = sc.nextInt();
+            int[] array = new int[index];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = sc.nextInt();
             }
-            for (int i = 0; i < s2.length; i++) {
-                s2[i] = sc.next();
-            }
-            System.out.println(solution(s1, s2));
+            System.out.println(Arrays.toString(solution(n, array)));
         }
     }
 
-    public static int solution(String[] s1, String[] s2) {
-        int answer = 0;
-        for (String value : s1) {
-            for (String s : s2) {
-                if (s.equals(value)) {
-                    answer++;
-                }
+    public static int[] solution(int n, int[] numlist) {
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+        for (int j : numlist) {
+            if (j % n == 0) {
+                count++;
+                sb.append(j).append(" ");
             }
+        }
+        String str = String.valueOf(sb);
+        String[] numbers = str.split(" ");
+        int[] answer = new int[count];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = Integer.parseInt(numbers[i]);
         }
         return answer;
     }
