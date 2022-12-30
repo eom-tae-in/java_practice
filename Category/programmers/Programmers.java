@@ -9,27 +9,19 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int arraySize = sc.nextInt();
-            int[] array = new int[arraySize];
-            for (int i = 0; i < array.length; i++) {
-                array[i] = sc.nextInt();
-            }
-            System.out.println(Arrays.toString(solution(array)));
+            int order = sc.nextInt();
+            System.out.println(solution(order));
         }
     }
 
-    public static int[] solution(int[] array) {
-        int[] answer = new int[2];
-        int index = 0;
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (max < array[i]) {
-                index = i;
-                max = array[i];
+    public static int solution(int order) {
+        int answer = 0;
+        String str = Integer.toString(order);
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '3' || str.charAt(i) == '6' || str.charAt(i) == '9') {
+                answer++;
             }
         }
-        answer[0] = max;
-        answer[1] = index;
         return answer;
     }
 }
