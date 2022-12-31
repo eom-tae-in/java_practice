@@ -9,18 +9,19 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int order = sc.nextInt();
-            System.out.println(solution(order));
+            int[] size = new int[3];
+            for (int i = 0; i < size.length; i++) {
+                size[i] = sc.nextInt();
+            }
+            int n = sc.nextInt();
+            System.out.println(solution(size, n));
         }
     }
 
-    public static int solution(int order) {
-        int answer = 0;
-        String str = Integer.toString(order);
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '3' || str.charAt(i) == '6' || str.charAt(i) == '9') {
-                answer++;
-            }
+    public static int solution(int[] box, int n) {
+        int answer = 1;
+        for (int i : box) {
+            answer *= i / n;
         }
         return answer;
     }
