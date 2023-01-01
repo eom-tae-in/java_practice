@@ -9,20 +9,20 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int[] size = new int[3];
-            for (int i = 0; i < size.length; i++) {
-                size[i] = sc.nextInt();
-            }
             int n = sc.nextInt();
-            System.out.println(solution(size, n));
+            System.out.println(solution(n));
         }
     }
 
-    public static int solution(int[] box, int n) {
+    public static int solution(int n) {
         int answer = 1;
-        for (int i : box) {
-            answer *= i / n;
+        int count = 1;
+        while (n >= answer) {
+            count++;
+            answer *= count;
         }
+        count--;
+        answer = count;
         return answer;
     }
 }
