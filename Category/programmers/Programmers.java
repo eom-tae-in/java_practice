@@ -9,20 +9,25 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int n = sc.nextInt();
-            System.out.println(solution(n));
+            int index = sc.nextInt();
+            int[] arr = new int[index];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = sc.nextInt();
+            }
+            System.out.println(solution(arr));
         }
     }
 
-    public static int solution(int n) {
-        int answer = 1;
-        int count = 1;
-        while (n >= answer) {
-            count++;
-            answer *= count;
+    public static int solution(int[] array) {
+        int answer = 0;
+        for (int i = 0; i < array.length; i++) {
+            String str = Integer.toString(array[i]);
+            for (int j = 0; j < str.length(); i++) {
+                if (str.charAt(j) == '7') {
+                    answer++;
+                }
+            }
         }
-        count--;
-        answer = count;
         return answer;
     }
 }
