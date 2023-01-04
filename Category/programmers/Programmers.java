@@ -7,20 +7,20 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String str = sc.next();
-            System.out.println(solution(str));
+            int price = sc.nextInt();
+            System.out.println(solution(price));
         }
 
-        public static String solution(String rsp) {
-            String answer = "";
-            for (int i = 0; i < rsp.length(); i++) {
-                if (rsp.charAt(i) == '2') {
-                    answer += "0";
-                } else if (rsp.charAt(i) == '0') {
-                    answer += "5";
-                } else {
-                    answer += "2";
-                }
+        public static int solution(int price) {
+            int answer = 0;
+            if (price >= 500000) {
+                answer = price * 8 / 10;
+            } else if (price >= 300000) {
+                answer = price * 9 / 10;
+            } else if (price >= 100000) {
+                answer = price * 95 / 100;
+            } else {
+                answer = price;
             }
             return answer;
         }
