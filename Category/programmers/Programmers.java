@@ -1,5 +1,6 @@
 package Category.programmers;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -7,20 +8,17 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int price = sc.nextInt();
-            System.out.println(solution(price));
+            int slice = sc.nextInt();
+            int n = sc.nextInt();
+            System.out.println(solution(slice, n));
         }
 
-        public static int solution(int price) {
+        public static int solution(int slice, int n) {
             int answer = 0;
-            if (price >= 500000) {
-                answer = price * 8 / 10;
-            } else if (price >= 300000) {
-                answer = price * 9 / 10;
-            } else if (price >= 100000) {
-                answer = price * 95 / 100;
+            if (n % slice != 0) {
+                answer = n / slice + 1;
             } else {
-                answer = price;
+                answer = n / slice;
             }
             return answer;
         }
