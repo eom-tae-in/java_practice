@@ -8,17 +8,20 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int slice = sc.nextInt();
-            int n = sc.nextInt();
-            System.out.println(solution(slice, n));
+            int[] triangle = new int[3];
+            for (int i = 0; i < triangle.length; i++) {
+                triangle[i] = sc.nextInt();
+            }
+            System.out.println(solution(triangle));
         }
 
-        public static int solution(int slice, int n) {
+        public static int solution(int[] sides) {
             int answer = 0;
-            if (n % slice != 0) {
-                answer = n / slice + 1;
+            Arrays.sort(sides);
+            if (sides[0] + sides[1] > sides[2]) {
+                answer = 1;
             } else {
-                answer = n / slice;
+                answer = 2;
             }
             return answer;
         }
