@@ -8,17 +8,14 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int[] triangle = new int[3];
-            for (int i = 0; i < triangle.length; i++) {
-                triangle[i] = sc.nextInt();
-            }
-            System.out.println(solution(triangle));
+            String str1 = sc.next();
+            String str2 = sc.next();
+            System.out.println(solution(str1, str2));
         }
 
-        public static int solution(int[] sides) {
+        public static int solution(String str1, String str2) {
             int answer = 0;
-            Arrays.sort(sides);
-            if (sides[0] + sides[1] > sides[2]) {
+            if (str1.contains(str2)) {
                 answer = 1;
             } else {
                 answer = 2;
