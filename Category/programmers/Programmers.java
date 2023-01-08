@@ -8,14 +8,13 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String str1 = sc.next();
-            String str2 = sc.next();
-            System.out.println(solution(str1, str2));
+            int num = sc.nextInt();
+            System.out.println(solution(num));
         }
 
-        public static int solution(String str1, String str2) {
+        public static int solution(int n) {
             int answer = 0;
-            if (str1.contains(str2)) {
+            if (Math.sqrt(n) % 1 == 0) {
                 answer = 1;
             } else {
                 answer = 2;
