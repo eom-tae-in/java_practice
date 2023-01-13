@@ -1,35 +1,25 @@
 package Category.programmers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Programmers {
 
     static class Solution {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            int n = sc.nextInt();
-            System.out.println(Arrays.toString(solution(n)));
+        public static void main(String[] args) throws IOException {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String my_string = br.readLine();
+            int num1 = Integer.parseInt(br.readLine());
+            int num2 = Integer.parseInt(br.readLine());
+            System.out.println(solution(my_string, num1, num2));
         }
 
-        public static int[] solution(int n) {
-            List<Integer> list = new ArrayList<>();
-            for (int i = 1; i * i <= n; i++) {
-                if (n % i == 0) {
-                    list.add(i);
-                    if (n / i != i) {
-                        list.add(n / i);
-                    }
-                }
-            }
-            Collections.sort(list);
-            int[] answer = new int[list.size()];
-            for (int i = 0; i < answer.length; i++) {
-                answer[i] = list.get(i);
-            }
+        public static String solution(String my_string, int num1, int num2) {
+            String answer = my_string.substring(0, num1) + my_string.charAt(num2) +
+              my_string.substring(num1+1, num2) + my_string.charAt(num1) + my_string.substring(num2+1);
             return answer;
         }
     }
