@@ -1,6 +1,5 @@
 package Category.programmers;
 
-
 import java.util.Scanner;
 
 public class Programmers {
