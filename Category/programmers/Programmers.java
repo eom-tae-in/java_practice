@@ -7,21 +7,15 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int i = sc.nextInt();
-            int j = sc.nextInt();
-            int k = sc.nextInt();
-            System.out.println(solution(i, j, k));
+            int n = sc.nextInt();
+            int t = sc.nextInt();
+            System.out.println(solution(n, t));
         }
 
-        public static int solution(int i, int j, int k) {
-            int answer = 0;
-            for (int a = i; a <= j; a++) {
-                String num = Integer.toString(a);
-                for (int b = 0; b < num.length(); b++) {
-                    if (num.charAt(b) - '0' == k) {
-                        answer++;
-                    }
-                }
+        public static int solution(int n, int t) {
+            int answer = n;
+            for (int i = 1; i <= t; i++) {
+                answer *= 2;
             }
             return answer;
         }
