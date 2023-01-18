@@ -8,18 +8,15 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] numbers = new int[index];
-            for (int i = 0; i < numbers.length; i++) {
-                numbers[i] = sc.nextInt();
-            }
-            System.out.println(solution(numbers));
+            int age = sc.nextInt();
+            System.out.println(solution(age));
         }
 
-        public static int solution(int[] numbers) {
-            int answer = 45;
-            for (int i = 0; i < numbers.length; i++) {
-                answer -= numbers[i];
+        public static String solution(int age) {
+            String answer = "";
+            String str = Integer.toString(age);
+            for (int i = 0; i < str.length(); i++) {
+                answer += Character.toString(str.charAt(i) + (char) 49);
             }
             return answer;
         }
