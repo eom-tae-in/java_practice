@@ -1,6 +1,5 @@
 package Category.programmers;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -8,19 +7,15 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            int M = sc.nextInt();
-            int N = sc.nextInt();
-            System.out.println(solution(M, N));
+            String my_string = sc.next();
+            System.out.println(solution(my_string));
         }
-        public static int solution(int M, int N) {
-            int answer = 0;
-            int piece = 1;
-            while (M != 1) {
-                answer += 1;
-                piece += 1;
-                M--;
+        public static String solution(String my_string) {
+            String answer = "";
+            for (int i = 0; i < my_string.length(); i++) {
+                answer += (my_string.charAt(i) < 'a') ? String.valueOf(my_string.charAt(i)).toLowerCase() :
+                  String.valueOf(my_string.charAt(i)).toUpperCase();
             }
-            answer += piece * (N - 1);
             return answer;
         }
     }
