@@ -1,9 +1,6 @@
 package Category.programmers;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Programmers {
@@ -11,22 +8,24 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args){
             Scanner sc = new Scanner(System.in);
-            String my_string = sc.next();
-            System.out.println(Arrays.toString(solution(my_string)));
+            int index = sc.nextInt();
+            int[] numbers = new int[index];
+            for (int i = 0; i < numbers.length; i++) {
+                numbers[i] = sc.nextInt();
+            }
+            String direction = sc.next();
+            System.out.println(Arrays.toString(solution(numbers, direction)));
         }
 
-        public static int[] solution(String my_string) {
-            List<Integer> list = new ArrayList<>();
-            for (int i = 0; i < my_string.length(); i++) {
-                if (Character.isDigit(my_string.charAt(i))) {
-                    list.add(my_string.charAt(i) - '0');
-                }
+        public static int[] solution(int[] numbers, String direction) {
+            int[] answer = new int[numbers.length];
+            if (direction.equals("right")) {
+                answer[0] = numbers[numbers.length - 1];
+                System.arraycopy(numbers, 0, answer, 1, numbers.length - 1);
+                return answer;
             }
-            Collections.sort(list);
-            int[] answer = new int[list.size()];
-            for (int i = 0; i < answer.length; i++) {
-                answer[i] = list.get(i);
-            }
+            System.arraycopy(numbers, 1, answer, 0, numbers.length - 1);
+            answer[answer.length - 1] = numbers[0];
             return answer;
         }
     }
