@@ -6,26 +6,37 @@ import java.util.Scanner;
 public class Programmers {
 
     static class Solution {
-        public static void main(String[] args){
+        public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             int index = sc.nextInt();
-            int[] numbers = new int[index];
-            for (int i = 0; i < numbers.length; i++) {
-                numbers[i] = sc.nextInt();
+            int[] arr = new int[index];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = sc.nextInt();
             }
-            String direction = sc.next();
-            System.out.println(Arrays.toString(solution(numbers, direction)));
+            System.out.println(Arrays.toString(solution(arr)));
         }
 
-        public static int[] solution(int[] numbers, String direction) {
-            int[] answer = new int[numbers.length];
-            if (direction.equals("right")) {
-                answer[0] = numbers[numbers.length - 1];
-                System.arraycopy(numbers, 0, answer, 1, numbers.length - 1);
+        public static int[] solution(int[] arr) {
+            if (arr.length == 1) {
+                int[] answer = new int[1];
+                answer[0] = -1;
                 return answer;
             }
-            System.arraycopy(numbers, 1, answer, 0, numbers.length - 1);
-            answer[answer.length - 1] = numbers[0];
+            int[] answer = new int[arr.length - 1];
+            int min = arr[0];
+            int index = 0;
+            for (int i = 1; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i];
+                    index = i;
+                }
+            }
+            for (int i = 0; i < index; i++) {
+                answer[i] = arr[i];
+            }
+            for (int i = index; i < answer.length; i++) {
+                answer[i] = arr[i + 1];
+            }
             return answer;
         }
     }
