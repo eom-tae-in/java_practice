@@ -16,27 +16,16 @@ public class Programmers {
             System.out.println(Arrays.toString(solution(arr)));
         }
 
-        public static int[] solution(int[] arr) {
-            if (arr.length == 1) {
-                int[] answer = new int[1];
-                answer[0] = -1;
+        public long solution(int price, int money, int count) {
+            long answer = 0;
+            long total = 0;
+            for (int i = 1; i <= count; i++) {
+                total += (long) price * i;
+            }
+            if (money - total >= 0) {
                 return answer;
             }
-            int[] answer = new int[arr.length - 1];
-            int min = arr[0];
-            int index = 0;
-            for (int i = 1; i < arr.length; i++) {
-                if (min > arr[i]) {
-                    min = arr[i];
-                    index = i;
-                }
-            }
-            for (int i = 0; i < index; i++) {
-                answer[i] = arr[i];
-            }
-            for (int i = index; i < answer.length; i++) {
-                answer[i] = arr[i + 1];
-            }
+            answer = total - money;
             return answer;
         }
     }
