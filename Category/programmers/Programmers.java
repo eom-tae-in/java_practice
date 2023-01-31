@@ -8,15 +8,13 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int index = sc.nextInt();
-            int[] arr = new int[index];
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = sc.nextInt();
-            }
-            System.out.println(Arrays.toString(solution(arr)));
+            int price = sc.nextInt();
+            int money = sc.nextInt();
+            int count = sc.nextInt();
+            System.out.println(solution(price, money, count));
         }
 
-        public long solution(int price, int money, int count) {
+        public static long solution(int price, int money, int count) {
             long answer = 0;
             long total = 0;
             for (int i = 1; i <= count; i++) {
