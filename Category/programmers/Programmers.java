@@ -8,22 +8,18 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            int price = sc.nextInt();
-            int money = sc.nextInt();
-            int count = sc.nextInt();
-            System.out.println(solution(price, money, count));
+            String s = sc.next();
+            System.out.println(solution(s));
         }
 
-        public static long solution(int price, int money, int count) {
-            long answer = 0;
-            long total = 0;
-            for (int i = 1; i <= count; i++) {
-                total += (long) price * i;
-            }
-            if (money - total >= 0) {
+        public static String solution(String s) {
+            String answer = "";
+            if (s.length() % 2 == 0) {
+                answer += s.charAt(s.length() / 2 - 1);
+                answer += s.charAt(s.length() / 2);
                 return answer;
             }
-            answer = total - money;
+            answer += s.charAt(s.length() / 2);
             return answer;
         }
     }
