@@ -1,5 +1,6 @@
 package Category.programmers;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -7,23 +8,15 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String s = sc.next();
-            System.out.println(solution(s));
+            String my_string = sc.next();
+            System.out.println(solution(my_string));
         }
 
-        public static boolean solution(String s) {
-            boolean answer = true;
-            int stringLength = s.length();
-            if (!(stringLength == 4 || stringLength == 6)) {
-                answer = false;
-                return answer;
-            }
-            for (int i = 0; i < stringLength; i++) {
-                if (!Character.isDigit(s.charAt(i))) {
-                    answer = false;
-                    return answer;
-                }
-            }
+        public static String solution(String my_string) {
+            String answer = "";
+            char[] my_stringToChar = my_string.toLowerCase().toCharArray();
+            Arrays.sort(my_stringToChar);
+            answer = String.valueOf(my_stringToChar);
             return answer;
         }
     }
