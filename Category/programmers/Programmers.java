@@ -1,6 +1,5 @@
 package Category.programmers;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Programmers {
@@ -8,16 +7,27 @@ public class Programmers {
     static class Solution {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            String my_string = sc.next();
-            System.out.println(solution(my_string));
+            int n = sc.nextInt();
+            System.out.println(solution(n));
         }
 
-        public static String solution(String my_string) {
-            String answer = "";
-            char[] my_stringToChar = my_string.toLowerCase().toCharArray();
-            Arrays.sort(my_stringToChar);
-            answer = String.valueOf(my_stringToChar);
+        public static int solution(int n) {
+            int answer = 0;
+            for (int i = 4; i <= n; i++) {
+                if (compositionNumber(i)) {
+                    answer++;
+                }
+            }
             return answer;
+        }
+
+        public static boolean compositionNumber(int number) {
+            for (int i = 2; i * i <= number; i++) {
+                if (number % i == 0) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
