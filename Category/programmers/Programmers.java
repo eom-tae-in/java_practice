@@ -1,32 +1,35 @@
 package Category.programmers;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedHashSet;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Programmers {
 
     static class Solution {
-        public static void main(String[] args) throws IOException {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String my_string = br.readLine();
-            System.out.println(solution(my_string));
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String before = sc.next();
+            String after = sc.next();
+            System.out.println(solution(before, after));
         }
 
-        public static String solution(String my_string) {
-            return deduplicate(my_string);
-        }
-
-        public static String deduplicate(String my_string) {
-            LinkedHashSet<String> deduplication = new LinkedHashSet<>();
-            for (int i = 0; i < my_string.length(); i++) {
-                deduplication.add(String.valueOf(my_string.charAt(i)));
+        public static int solution(String before, String after) {
+            String sortedBefore = sortMethod(before);
+            String sortedAfter = sortMethod(after);
+            if (equalsValidation(sortedBefore, sortedAfter)) {
+                return 1;
             }
-            String[] deduplicatedArray = new String[deduplication.size()];
-            deduplicatedArray = deduplication.toArray(deduplicatedArray);
-            return String.join("", deduplicatedArray);
+            return 0;
         }
 
+        public static String sortMethod(String str) {
+            char[] charArray = str.toCharArray();
+            Arrays.sort(charArray);
+            return new String(charArray);
+        }
+
+        public static boolean equalsValidation(String sortedBefore, String sortedAfter) {
+            return sortedAfter.equals(sortedBefore);
+        }
     }
 }
