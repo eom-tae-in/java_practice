@@ -21,13 +21,12 @@ public class travelRoute {
     }
 
     public static String[] solution(String[][] tickets) {
-        String[] answer;
         int count = 0;
         list = new ArrayList<>();
         ch = new boolean[tickets.length];
         dfs("ICN", "ICN", tickets, count);
         Collections.sort(list);
-        return answer = list.get(0).split(" ");
+        return list.get(0).split(" ");
     }
 
     public static void dfs(String start, String route, String[][] tickets, int count) {
@@ -35,7 +34,7 @@ public class travelRoute {
             list.add(route);
         }
         for (int i = 0; i < tickets.length; i++) {
-            if (start.equals(tickets[i][0])) {
+            if (start.equals(tickets[i][0]) && !ch[i]) {
                 ch[i] = true;
                 dfs(tickets[i][1], route + " " + tickets[i][1], tickets, count + 1);
                 ch[i] = false;
