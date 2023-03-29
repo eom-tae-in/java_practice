@@ -2,46 +2,67 @@ package Category.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class q_1388 {
-    private void solution() throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        char[][] arr = new char[n][m];
+    static int[][] height = {{1, 0}, {-1, 0}};
+    static int[][] width = {{0, 1}, {0, -1}};
+
+    static boolean[][] ch;
+    static int n;
+    static int m;
+
+
+    public static void main(String[] args) {
+        int answer = 0;
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
+        char[][] floor = new char[n][m];
+        ch = new boolean[n][m];
+
         for (int i = 0; i < n; i++) {
-            String row = br.readLine();
+            String s = sc.next();
             for (int j = 0; j < m; j++) {
-                arr[i][j] = row.charAt(j);
+                floor[i][j] = s.charAt(j);
             }
         }
-        int cnt = 0;
         for (int i = 0; i < n; i++) {
-            int tmp = 0;
             for (int j = 0; j < m; j++) {
-                if (arr[i][j] == '|') {
-                    tmp = 0;
-                } else if (++tmp == 1) {
-                    cnt++;
+                if (!ch[i][j]) {
+                    answer++;
+                    dfs(i, j, floor);
                 }
             }
         }
-        for (int j = 0; j < m; j++) {
-            int tmp = 0;
-            for (int i = 0; i < n; i++) {
-                if (arr[i][j] == '-') {
-                    tmp = 0;
-                } else if (++tmp == 1) {
-                    cnt++;
-                }
-            }
-        }
-        System.out.println(cnt);
+        System.out.println(answer);
     }
 
-    public static void main(String[] args) throws Exception {
-        new q_1388().solution();
+    public static void dfs(int y, int x, char[][] floor) {
+        ch[y][x] = true;
+        if (floor[y][x]== '-') {
+            for (int i = 0; i < width.length; i++) {
+                int cy = y + width[i][0];
+                int cx = x + width[i][1];
+                if (cx >= 0 && cx < m && cy >= 0 && cy < n) {
+                    if (floor[cy][cx]== '-' && !ch[cy][cx]) {
+                        dfs(cy, cx, floor);
+
+                    }
+                }
+            }
+        }
+        if (floor[y][x] == '|') {
+            for (int i = 0; i < height.length; i++) {
+                int cy = y + height[i][0];
+                int cx = x + height[i][1];
+                if (cx >= 0 && cx < m && cy >= 0 && cy < n) {
+                    if (floor[cy][cx] == '|' && !ch[cy][cx]) {
+                        dfs(cy, cx, floor);
+                    }
+                }
+            }
+        }
     }
 }
