@@ -5,8 +5,6 @@ import java.util.*;
 public class q_1260 {
 
     static ArrayList<ArrayList<Integer>> graph;
-    static ArrayList<Integer> dfsArr;
-    static ArrayList<Integer> bfsArr;
     static int N, M, V;
     static boolean[] check;
 
@@ -17,8 +15,6 @@ public class q_1260 {
         V = sc.nextInt();
         graph = new ArrayList<>();
         check = new boolean[N + 1];
-        bfsArr = new ArrayList<>();
-        dfsArr = new ArrayList<>();
         for (int i = 0; i < N + 1; i++) {
             graph.add(new ArrayList<>());
         }
@@ -28,24 +24,20 @@ public class q_1260 {
             graph.get(a).add(b);
             graph.get(b).add(a);
         }
-        for (int i = 0; i < N + 1; i++) {
+        for (int i = 1; i < N + 1; i++) {
             Collections.sort(graph.get(i));
         }
-        check[V] = true;
-        dfsArr.add(V);
         dfs(V);
+        System.out.println();
         Arrays.fill(check, false);
         bfs(V);
-        System.out.println(dfsArr);
-        System.out.println(bfsArr);
     }
 
     public static void dfs(int n) {
-
+        check[n] = true;
+        System.out.print(n + " ");
         for (int i : graph.get(n)) {
-            if (!check[i]){
-                dfsArr.add(i);
-                check[i] = true;
+            if (!check[i]) {
                 dfs(i);
             }
         }
@@ -56,13 +48,13 @@ public class q_1260 {
         check[n] = true;
         Queue<Integer> queue = new LinkedList<>();
         queue.add(n);
-        bfsArr.add(n);
         while (!queue.isEmpty()) {
-            for (int i : graph.get(queue.poll())) {
+            int cv = queue.poll();
+            System.out.print(cv + " ");
+            for (int i : graph.get(cv)) {
                 if (!check[i]) {
                     queue.add(i);
                     check[i] = true;
-                    bfsArr.add(i);
                 }
             }
         }
