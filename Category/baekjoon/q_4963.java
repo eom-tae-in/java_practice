@@ -7,14 +7,10 @@ public class q_4963 {
     static int w, h;
     static int[][] array;
     static boolean[][] check;
-
     static int[] dx = {0, 1, 1, 1, 0, -1, -1, -1};
     static int[] dy = {-1, -1, 0, 1, 1, 1, 0, -1};
 
     public static void dfs(int y, int x) {
-        if (check[y][x]) {
-            return;
-        }
         check[y][x] = true;
         for (int i = 0; i < 8; i++) {
             int ny = y + dy[i];
@@ -52,5 +48,4 @@ public class q_4963 {
             System.out.println(count);
         }
     }
-
 }
