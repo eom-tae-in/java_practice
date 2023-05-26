@@ -3,9 +3,7 @@ package Category.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class q_1325 {
 
@@ -13,12 +11,18 @@ public class q_1325 {
     static boolean[] check;
     static int[] result;
 
-    public static void dfs(int num) {
+    public static void bfs(int num) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(num);
         check[num] = true;
-        for (int i : graph.get(num)) {
-            if (!check[i]) {
-                result[i]++;
-                dfs(i);
+        while (!queue.isEmpty()) {
+            int cv = queue.poll();
+            for (int i : graph.get(cv)) {
+                if (!check[i]) {
+                    check[i] = true;
+                    queue.add(i);
+                    result[i]++;
+                }
             }
         }
     }
@@ -41,7 +45,7 @@ public class q_1325 {
             graph.get(a).add(b);
         }
         for (int i = 1; i <= n; i++) {
-            dfs(i);
+            bfs(i);
             Arrays.fill(check, false);
         }
         for (int i = 1; i <= n; i++) {
@@ -49,10 +53,11 @@ public class q_1325 {
                 max = result[i];
             }
         }
-        for (int i = 1; i <= n; i ++) {
-            if (result[i] == max) {
+        for (int i = 1; i <= n; i++) {
+            if (max == result[i]) {
                 System.out.print(i + " ");
             }
         }
     }
 }
+
