@@ -1,35 +1,47 @@
 package Category.baekjoon;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class q_2606 {
 
     static boolean[] ch;
-    static int[][] arr;
+
+    static int[][] connection;
     static int count = 0;
-    static int num, conn;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        num = sc.nextInt();
-        conn = sc.nextInt();
+        int num = sc.nextInt();
+        int conn = sc.nextInt();
         ch = new boolean[num + 1];
-        arr = new int[num + 1][num + 1];
+        connection = new int[conn][2];
         for (int i = 0; i < conn; i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
-            arr[a][b] = arr[b][a] = 1;
+            connection[i][0] = sc.nextInt();
+            connection[i][1] = sc.nextInt();
         }
-        dfs(1);
-        System.out.println(count - 1);
+        bfs();
+        System.out.println(count);
     }
 
-    public static void dfs(int start) {
-        ch[start] = true;
-        count++;
-        for (int i = 0; i < num + 1; i++) {
-            if (arr[start][i] == 1 && !ch[i]) {
-                dfs(i);
+    public static void bfs() {
+        ch[1] = true;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < connection.length; i++) {
+            if (connection[i][0] == 1) {
+                queue.add(connection[i][1]);
+            }
+        }
+        while (!queue.isEmpty()) {
+            int current = queue.remove();
+            ch[current] = true;
+            count++;
+            for (int i = 0; i < connection.length; i++) {
+                if (connection[i][0] == current && !ch[connection[i][1]]) {
+                    queue.add(connection[i][1]);
+                    System.out.println(connection[i][1]);
+                }
             }
         }
     }

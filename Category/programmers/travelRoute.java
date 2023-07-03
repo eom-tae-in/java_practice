@@ -1,14 +1,13 @@
 package Category.programmers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class travelRoute {
-
     static ArrayList<String> list;
     static boolean[] ch;
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
@@ -17,7 +16,7 @@ public class travelRoute {
             tickets[i][0] = sc.next();
             tickets[i][1] = sc.next();
         }
-        System.out.println(solution(tickets));
+        System.out.println(Arrays.toString(solution(tickets)));
     }
 
     public static String[] solution(String[][] tickets) {

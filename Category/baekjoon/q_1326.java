@@ -9,17 +9,18 @@ public class q_1326 {
     static class Board {
 
         int position;
-        int value;
         int sum;
+        int value;
 
-        public Board(int position, int value, int sum) {
+        public Board(int position, int sum, int value) {
             this.position = position;
-            this.value = value;
             this.sum = sum;
+            this.value = value;
         }
     }
-    static boolean[] ch;
     static int total = Integer.MAX_VALUE;
+
+    static boolean[] ch;
 
     static int n;
 
@@ -43,6 +44,7 @@ public class q_1326 {
 
         while (!queue.isEmpty()) {
             Board board = queue.remove();
+
             if (board.position == b) {
                 total = Math.min(board.sum, total);
                 break;
