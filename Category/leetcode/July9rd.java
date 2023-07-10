@@ -18,7 +18,7 @@ public class July9rd {
         for (int i = 0; i < 26; i++) {
             Arrays.fill(relativeCount[i], -s.length());
         }
-\
+
         for (int i = 0; i < s.length(); i++) {
             int ch = s.charAt(i) - 'a';
             for (int j = 0; j < 26; j++) {
