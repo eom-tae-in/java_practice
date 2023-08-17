@@ -5,35 +5,35 @@ import java.util.Queue;
 
 public class August17rd {
     public int[][] updateMatrix(int[][] mat) {
-        final int m = mat.length;
-        final int n = mat[0].length;
-        final int[] dirs = new int[] {0, 1, 0, -1, 0};
-        Queue<int[]> q = new ArrayDeque<>();
-        boolean[][] seen = new boolean[m][n];
+        final int rowLength = mat.length;
+        final int columnLength = mat[0].length;
+        int[] directions = {0, 1, 0, -1, 0};
+        Queue<int[]> queue = new ArrayDeque<>();
+        boolean[][] visited = new boolean[rowLength][columnLength];
 
-        for (int i = 0; i < m; ++i)
-            for (int j = 0; j < n; ++j)
+        for (int i = 0; i < rowLength; ++i)
+            for (int j = 0; j < columnLength; ++j)
                 if (mat[i][j] == 0) {
-                    q.offer(new int[] {i, j});
-                    seen[i][j] = true;
+                    queue.offer(new int[] {i, j});
+                    visited[i][j] = true;
                 }
 
-        while (!q.isEmpty()) {
-            final int i = q.peek()[0];
-            final int j = q.poll()[1];
-            for (int k = 0; k < 4; ++k) {
-                final int x = i + dirs[k];
-                final int y = j + dirs[k + 1];
-                if (x < 0 || x == m || y < 0 || y == n)
+        while (!queue.isEmpty()) {
+            int[] currentPosition = queue.poll();
+            final int cRow = currentPosition[0];
+            final int cColumn = currentPosition[1];
+            for (int i = 0; i < 4; ++i) {
+                final int nRow = cRow + directions[i];
+                final int nColumn = cColumn + directions[i + 1];
+                if (nRow < 0 || nRow == rowLength || nColumn < 0 || nColumn == columnLength)
                     continue;
-                if (seen[x][y])
+                if (visited[nRow][nColumn])
                     continue;
-                mat[x][y] = mat[i][j] + 1;
-                q.offer(new int[] {x, y});
-                seen[x][y] = true;
+                mat[nRow][nColumn] = mat[cRow][cColumn] + 1;
+                queue.offer(new int[] {nRow, nColumn});
+                visited[nRow][nColumn] = true;
             }
         }
-
         return mat;
     }
 }
