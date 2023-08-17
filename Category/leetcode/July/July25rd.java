@@ -1,4 +1,4 @@
-package Category.leetcode;
+package Category.leetcode.July;
 
 public class July25rd {
     public int peakIndexInMountainArray(final int[] arr) {

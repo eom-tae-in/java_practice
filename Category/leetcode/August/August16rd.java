@@ -1,4 +1,4 @@
-package Category.leetcode;
+package Category.leetcode.August;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

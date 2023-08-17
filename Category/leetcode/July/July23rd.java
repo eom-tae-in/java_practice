@@ -1,4 +1,4 @@
-package Category.leetcode;
+package Category.leetcode.July;
 
 import java.util.ArrayList;
 import java.util.List;
