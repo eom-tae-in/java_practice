@@ -1,6 +1,6 @@
 package Category.leetcode.July;
 
-public class July25rd {
+public class July25th {
     public int peakIndexInMountainArray(final int[] arr) {
         int start = 0;
         int end = arr.length - 1;

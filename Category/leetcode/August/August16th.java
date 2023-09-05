@@ -3,7 +3,7 @@ package Category.leetcode.August;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class August16rd {
+public class August16th {
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] ans = new int[nums.length - k + 1];
         Deque<Integer> dq = new ArrayDeque<>();

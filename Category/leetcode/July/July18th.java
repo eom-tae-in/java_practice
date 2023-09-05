@@ -3,7 +3,7 @@ package Category.leetcode.July;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class July18rd {
+public class July18th {
     class LRUCache {
 
         private final Map<Integer, Integer> map;

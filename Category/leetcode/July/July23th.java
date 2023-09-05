@@ -3,7 +3,7 @@ package Category.leetcode.July;
 import java.util.ArrayList;
 import java.util.List;
 
-public class July23rd {
+public class July23th {
     class TreeNode {
 
         private int val;

@@ -3,7 +3,7 @@ package Category.leetcode.August;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class August22rd {
+public class August22th {
     public String convertToTitle(int columnNumber) {
         Deque<Integer> alphabets = new ArrayDeque<>();
         StringBuilder sb = new StringBuilder();

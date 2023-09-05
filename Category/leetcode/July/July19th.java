@@ -2,7 +2,7 @@ package Category.leetcode.July;
 
 import java.util.Arrays;
 
-public class July19rd {
+public class July19th {
     public int eraseOverlapIntervals(final int[][] intervals) {
         int count = 0;
         int end = Integer.MIN_VALUE;

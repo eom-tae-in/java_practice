@@ -3,7 +3,7 @@ package Category.leetcode.July;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class July20rd {
+public class July20th {
 
     public int[] asteroidCollision(final int[] asteroids) {
         Deque<Integer> deque = new ArrayDeque<>();

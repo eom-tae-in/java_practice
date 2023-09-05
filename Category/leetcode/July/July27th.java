@@ -1,6 +1,6 @@
 package Category.leetcode.July;
 
-public class July27rd {
+public class July27th {
     public long maxRunTime(final int n, final int[] batteries) {
         long start = 0;
         long end = 0;

@@ -1,6 +1,6 @@
 package Category.leetcode.August;
 
-public class August13rd {
+public class August13th {
     public boolean validPartition(int[] nums) {
         final int num = nums.length;
         boolean[] dp = new boolean[num + 1];

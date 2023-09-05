@@ -17,7 +17,7 @@ class ListNode {
     }
 }
 
-public class August15rd {
+public class August15th {
     public ListNode partition(ListNode head, final int x) {
         ListNode smallValueHead = new ListNode(0);
         ListNode largeOrSameValueHead = new ListNode(0);

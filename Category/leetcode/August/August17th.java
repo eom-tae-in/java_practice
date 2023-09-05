@@ -3,7 +3,7 @@ package Category.leetcode.August;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class August17rd {
+public class August17th {
     public int[][] updateMatrix(int[][] mat) {
         final int rowLength = mat.length;
         final int columnLength = mat[0].length;

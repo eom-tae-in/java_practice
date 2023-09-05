@@ -2,7 +2,7 @@ package Category.leetcode.July;
 
 import java.util.Stack;
 
-public class July17rd {
+public class July17th {
 
     class ListNode {
 

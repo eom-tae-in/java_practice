@@ -1,6 +1,6 @@
 package Category.leetcode.August;
 
-public class August14rd {
+public class August14th {
     public int findKthLargest(int[] nums, int k) {
         int[] count = new int[20001];
         for (int num : nums) {

@@ -1,6 +1,6 @@
 package Category.leetcode.August;
 
-public class August21rd {
+public class August21th {
     public boolean repeatedSubstringPattern(String s) {
         int length = s.length();
 

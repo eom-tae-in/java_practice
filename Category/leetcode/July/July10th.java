@@ -3,7 +3,7 @@ package Category.leetcode.July;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class July10rd {
+public class July10th {
     public class TreeNode {
           int val;
           TreeNode left;

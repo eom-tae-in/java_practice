@@ -1,6 +1,6 @@
 package Category.leetcode.July;
 
-public class July26rd {
+public class July26th {
 
     public int minSpeedOnTime(final int[] dist, final double hour) {
         int min = 1;

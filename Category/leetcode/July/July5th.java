@@ -2,7 +2,7 @@ package Category.leetcode.July;
 
 import java.util.Scanner;
 
-public class July5rd {
+public class July5th {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
