@@ -23,7 +23,7 @@ public class BFS {
         int rowSize = heights.length;
         int columnSize = heights[0].length;
         int[] dirs = {0, 1, 0, -1, 0};
-        Queue<Element> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a.effort));
+        Queue<Element> queue = new PriorityQueue<>(Comparator.comparingInt(element -> element.effort));
         int[][] efforts = new int[rowSize][columnSize];
         Arrays.stream(efforts)
                 .forEach(rows -> Arrays.fill(rows, Integer.MAX_VALUE));
