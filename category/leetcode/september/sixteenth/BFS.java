@@ -1,4 +1,4 @@
-package category.leetcode.september;
+package category.leetcode.september.sixteenth;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -17,7 +17,7 @@ class Element {
     }
 }
 
-public class September16th {
+public class BFS {
 
     public int minimumEffortPath(int[][] heights) {
         int rowSize = heights.length;
@@ -57,7 +57,7 @@ public class September16th {
                 }
             }
         }
-        return -1;
+        return 0;
     }
 }
 
