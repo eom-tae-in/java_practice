@@ -1,4 +1,4 @@
-package category.leetcode.september.twenty_four;
+package category.leetcode.september.twenty_fourth;
 
 public class September24th {
 
