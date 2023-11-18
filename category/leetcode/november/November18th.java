@@ -2,7 +2,7 @@ package category.leetcode.november;
 
 import java.util.Arrays;
 
-public class November19th {
+public class November18th {
 
     public int maxFrequency(int[] nums, int k) {
         long sum = 0;
