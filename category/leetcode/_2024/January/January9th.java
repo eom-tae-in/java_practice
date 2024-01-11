@@ -5,7 +5,7 @@ import java.util.List;
 
 public class January9th {
 
-    public boolean leafSimilar(final TreeNode root1, final TreeNode root2) {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> leaves1 = new ArrayList<>();
         List<Integer> leaves2 = new ArrayList<>();
         dfs(root1, leaves1);
@@ -13,7 +13,7 @@ public class January9th {
         return leaves1.equals(leaves2);
     }
 
-    public void dfs(final TreeNode node, List<Integer> leaves) {
+    public void dfs(TreeNode node, List<Integer> leaves) {
         if (node == null) {
             return;
         }

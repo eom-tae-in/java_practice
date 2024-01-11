@@ -4,12 +4,12 @@ public class January10th {
 
     private int answer;
 
-    public int amountOfTime(final TreeNode treeNode, final int start) {
+    public int amountOfTime(TreeNode treeNode, final int start) {
         dfs(treeNode, start);
         return answer;
     }
 
-    private int dfs(final TreeNode node, final int start) {
+    private int dfs(TreeNode node, final int start) {
         if (node == null) {
             return 0;
         }

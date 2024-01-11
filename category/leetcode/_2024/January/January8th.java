@@ -2,7 +2,7 @@ package category.leetcode._2024.January;
 
 public class January8th {
 
-    public int rangeSumBST(final TreeNode root, final int L, final int R) {
+    public int rangeSumBST(TreeNode root, final int L, final int R) {
         if (root == null) {
             return 0;
         }

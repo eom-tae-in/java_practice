@@ -6,7 +6,7 @@ public class January11th {
         return dfs(root, root.val, root.val);
     }
 
-    private int dfs(TreeNode root, final int min, final int max) {
+    private int dfs(TreeNode root, int min, int max) {
         if (root == null) {
             return 0;
         }
