@@ -2,7 +2,7 @@ package category.leetcode._2024.february;
 
 public class February21th {
 
-    public int rangeBitwiseAnd(final int left, final int right) {
+    public int rangeBitwiseAnd(int left, int right) {
         int bitShiftSize = 0;
 
         while (left != right) {
