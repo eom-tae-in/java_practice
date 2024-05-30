@@ -22,8 +22,6 @@ public class May15th {
         Queue<Position> queue = new ArrayDeque<>();
         boolean[][] isVisited = new boolean[n][n];
         int[][] thiefDistance = new int[n][n];
-        int counter = 0;
-
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid.get(i).get(j) == 1) {
@@ -33,15 +31,14 @@ public class May15th {
             }
         }
 
+        int counter = 0;
         while (!queue.isEmpty()) {
             int size = queue.size();
-
             for (int i = 0; i < size; i++) {
                 Position position = queue.poll();
                 int y = position.getY();
                 int x = position.getX();
                 thiefDistance[y][x] = counter;
-
                 for (int j = 0; j < 4; j++) {
                     int ny = y + dy[j];
                     int nx = x + dx[j];
@@ -67,7 +64,6 @@ public class May15th {
         boolean[][] isVisited = new boolean[n][n];
         queue.offer(Position.createWith(0, 0, thiefDistance[0][0]));
         isVisited[0][0] = true;
-
         while (!queue.isEmpty()) {
             Position position = queue.poll();
             int y = position.getY();
@@ -75,14 +71,11 @@ public class May15th {
             if (y == n - 1 && x == n - 1) {
                 return position.getDistance();
             }
-
             for (int i = 0; i < 4; i++) {
                 int ny = y + dy[i];
                 int nx = x + dx[i];
-
                 if (isExistPosition(ny, nx, n) && !isVisited[ny][nx] && thiefDistance[ny][nx] != 0) {
                     int dist = Math.min(thiefDistance[ny][nx], position.getDistance());
-
                     queue.offer(Position.createWith(ny, nx, dist));
                     isVisited[ny][nx] = true;
                 }
