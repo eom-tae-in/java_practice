@@ -3,7 +3,7 @@ package category.leetcode._2023.august;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class August22th {
+public class August22nd {
     public String convertToTitle(int columnNumber) {
         Deque<Integer> alphabets = new ArrayDeque<>();
         StringBuilder sb = new StringBuilder();

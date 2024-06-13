@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class May23th {
+public class May23rd {
 
     public int beautifulSubsets(final int[] nums, final int k) {
         int maxNum = 1000;

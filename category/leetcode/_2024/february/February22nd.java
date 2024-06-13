@@ -1,6 +1,6 @@
 package category.leetcode._2024.february;
 
-public class February22th {
+public class February22nd {
 
     public int findJudge(final int n, final int[][] trust) {
         int[] count = new int[n + 1];

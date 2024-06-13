@@ -1,6 +1,6 @@
 package category.leetcode._2024.february;
 
-public class February21th {
+public class February21st {
 
     public int rangeBitwiseAnd(int left, int right) {
         int bitShiftSize = 0;

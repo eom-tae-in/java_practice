@@ -1,6 +1,6 @@
 package category.leetcode._2024.March;
 
-public class March23th {
+public class March23rd {
 
     public void reorderList(ListNode head) {
         if (head == null || head.next == null) {

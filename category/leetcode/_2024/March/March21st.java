@@ -1,6 +1,6 @@
 package category.leetcode._2024.March;
 
-public class March21th {
+public class March21st {
 
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;

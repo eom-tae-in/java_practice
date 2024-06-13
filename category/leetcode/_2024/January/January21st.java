@@ -1,6 +1,6 @@
 package category.leetcode._2024.January;
 
-public class January21th {
+public class January21st {
 
     public int rob(int[] nums) {
         final int n = nums.length;

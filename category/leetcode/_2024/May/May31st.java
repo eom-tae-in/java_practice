@@ -1,6 +1,6 @@
 package category.leetcode._2024.May;
 
-public class May31th {
+public class May31st {
 
     public int[] singleNumber(final int[] nums) {
         int xorSum = 0;

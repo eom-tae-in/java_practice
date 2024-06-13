@@ -1,6 +1,6 @@
 package category.leetcode._2023.august;
 
-public class August21th {
+public class August21st {
     public boolean repeatedSubstringPattern(String s) {
         int length = s.length();
 

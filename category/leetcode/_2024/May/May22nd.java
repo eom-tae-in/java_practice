@@ -3,7 +3,7 @@ package category.leetcode._2024.May;
 import java.util.ArrayList;
 import java.util.List;
 
-public class May22th {
+public class May22nd {
 
     public List<List<String>> partition(final String s) {
         List<List<String>> answer = new ArrayList<>();

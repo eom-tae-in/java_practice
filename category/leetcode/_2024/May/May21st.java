@@ -3,7 +3,7 @@ package category.leetcode._2024.May;
 import java.util.ArrayList;
 import java.util.List;
 
-public class May21th {
+public class May21st {
 
     public List<List<Integer>> subsets(final int[] nums) {
         List<List<Integer>> answer = new ArrayList<>();
