@@ -16,4 +16,3 @@ public class October8th {
         return (unmatched + 1) / 2;
     }
 }
-`
