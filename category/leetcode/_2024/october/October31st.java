@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class October31th {
+public class October31st {
 
     public long minimumTotalDistance(final List<Integer> robot, final int[][] factory) {
         Collections.sort(robot);

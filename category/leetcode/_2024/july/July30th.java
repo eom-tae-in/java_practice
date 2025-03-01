@@ -1,6 +1,6 @@
 package category.leetcode._2024.july;
 
-public class July30thh {
+public class July30th {
 
     public int minimumDeletions(final String s) {
         int dp = 0;

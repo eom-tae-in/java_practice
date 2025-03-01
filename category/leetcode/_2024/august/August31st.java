@@ -1,6 +1,6 @@
 package category.leetcode._2024.august;
 
-public class August31th {
+public class August31st {
 
     public double maxProbability(
             final int n,

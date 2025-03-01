@@ -3,7 +3,7 @@ package category.leetcode._2024.december;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class December31th {
+public class December31st {
 
     public int mincostTickets(final int[] days, final int[] costs) {
         int answer = 0;

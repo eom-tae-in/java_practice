@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class January31th {
+public class January31st {
 
     public int largestIsland(final int[][] grid) {
         int m = grid.length;

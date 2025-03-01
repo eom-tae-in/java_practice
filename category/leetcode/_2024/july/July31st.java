@@ -2,7 +2,7 @@ package category.leetcode._2024.july;
 
 import java.util.Arrays;
 
-public class July31th {
+public class July31st {
 
     public int minHeightShelves(final int[][] books, final int shelfWidth) {
         int n = books.length;
