@@ -1,6 +1,6 @@
 package category.leetcode._2025.march;
 
-public class Math14th {
+public class March14th {
 
     public int maximumCandies(final int[] candies, final long k) {
         long total = 0;
