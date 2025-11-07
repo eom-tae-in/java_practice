@@ -1,0 +1,59 @@
+package category.leetcode._2025.november;
+
+import java.util.Arrays;
+
+public class November7th {
+
+    public long maxPower(int[] stations, int r, int k) {
+        long left = Arrays.stream(stations)
+                .min()
+                .getAsInt();
+        long right = Arrays.stream(stations)
+                .asLongStream()
+                .sum() + k + 1;
+
+        while (left < right) {
+            long mid = (left + right) / 2;
+
+            if (check(stations.clone(), r, k, mid)) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        return left - 1;
+    }
+
+    boolean check(int[] stations, int r, int additionalStations, long minPower) {
+        int n = stations.length;
+        long power = 0;
+
+        for (int i = 0; i < r; ++i) {
+            power += stations[i];
+        }
+
+        for (int i = 0; i < n; ++i) {
+            if (i + r < n) {
+                power += stations[i + r];
+            }
+
+            if (power < minPower) {
+                long requiredPower = minPower - power;
+
+                if (requiredPower > additionalStations) {
+                    return false;
+                }
+                stations[Math.min(n - 1, i + r)] += (int) requiredPower;
+                additionalStations -= (int) requiredPower;
+                power += requiredPower;
+            }
+
+            if (i - r >= 0) {
+                power -= stations[i - r];
+            }
+        }
+
+        return true;
+    }
+}
