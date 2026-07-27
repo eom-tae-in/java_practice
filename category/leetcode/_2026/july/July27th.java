@@ -1,6 +1,6 @@
 package category.leetcode._2026.july;
 
-public class july27th {
+public class July27th {
 
     public int maxProduct(int[] nums) {
         int primary = 0;
