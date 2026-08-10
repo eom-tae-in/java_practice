@@ -1,6 +1,6 @@
 package category.leetcode._2026.august;
 
-public class Augst10th {
+public class August10th {
 
     public boolean winnerSquareGame(int n) {
         boolean[] dp = new boolean[n + 1];
